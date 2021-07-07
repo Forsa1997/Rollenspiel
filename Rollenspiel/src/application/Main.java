@@ -13,14 +13,26 @@ public class Main extends Application {
 			BorderPane root = new BorderPane();
 			Scene scene = new Scene(root, 400, 400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/heads/Nico
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		
+		System.out.println("Servus Christoph!");
+		
 	}
+<<<<<<< HEAD
 
+=======
+	
+	
+>>>>>>> refs/heads/Nico
 	public static void main(String[] args) {
 		launch(args);
 
