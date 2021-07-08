@@ -1,5 +1,9 @@
 package application;
 
+import application.views.CombatView;
+import application.views.OutputView;
+import application.views.SelectionView;
+import application.views.StatsView;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.Background;
@@ -17,10 +21,10 @@ public class Layout {
 
 	VBox leftBox = new VBox();
 	VBox rightBox = new VBox();
-	VBox combatView = new VBox();
-	VBox outputView = new VBox();
-	VBox statsView = new VBox();
-	VBox selectionView = new VBox();
+	CombatView combatView = new CombatView();
+	OutputView outputView = new OutputView();
+	StatsView statsView = new StatsView();
+	SelectionView selectionView = new SelectionView();
 
 	public Layout() {
 
@@ -28,43 +32,10 @@ public class Layout {
 
 	public Scene createScene() {
 
-		this.leftBox.setMinWidth(700);
-		this.leftBox.setMinHeight(1000);
-		this.rightBox.setMinWidth(300);
-		this.rightBox.setMinHeight(1000);
-		this.combatView.setMinWidth(700);
-		this.combatView.setMinHeight(700);
-		this.outputView.setMinWidth(700);
-		this.outputView.setMinHeight(300);
-		this.statsView.setMinWidth(300);
-		this.statsView.setMinHeight(700);
-		this.selectionView.setMinWidth(300);
-		this.selectionView.setMinHeight(300);
-
 		changeBackgrounds();
 
 		this.leftBox.getChildren().addAll(this.combatView, this.outputView);
 		this.rightBox.getChildren().addAll(this.statsView, this.selectionView);
-//		Rectangle rectangle = new Rectangle(700, 700);
-//		Rectangle rectangle1 = new Rectangle(700, 300);
-//		Rectangle rectangle2 = new Rectangle(300, 700);
-//		Rectangle rectangle3 = new Rectangle(300, 300);
-//		rectangle.setFill(Color.ORANGE);
-//		rectangle1.setFill(Color.RED);
-//		rectangle2.setFill(Color.BLUE);
-//		rectangle3.setFill(Color.GREEN);
-//		Button testButton = new Button("Test");
-//		Button testButton1 = new Button("Test1");
-//		Button testButton2 = new Button("Test2");
-//		Button testButton3 = new Button("Test3");
-//		this.combatView.getChildren().add(testButton);
-//		this.outputView.getChildren().add(testButton1);
-//		this.statsView.getChildren().add(testButton2);
-//		this.selectionView.getChildren().add(testButton3);
-//		this.combatView.getChildren().add(rectangle);
-//		this.outputView.getChildren().add(rectangle1);
-//		this.statsView.getChildren().add(rectangle2);
-//		this.selectionView.getChildren().add(rectangle3);
 
 		HBox root = new HBox();
 		root.getChildren().addAll(this.leftBox, this.rightBox);
@@ -95,3 +66,23 @@ public class Layout {
 	}
 
 }
+//		Rectangle rectangle = new Rectangle(700, 700);
+//		Rectangle rectangle1 = new Rectangle(700, 300);
+//		Rectangle rectangle2 = new Rectangle(300, 700);
+//		Rectangle rectangle3 = new Rectangle(300, 300);
+//		rectangle.setFill(Color.ORANGE);
+//		rectangle1.setFill(Color.RED);
+//		rectangle2.setFill(Color.BLUE);
+//		rectangle3.setFill(Color.GREEN);
+//		Button testButton = new Button("Test");
+//		Button testButton1 = new Button("Test1");
+//		Button testButton2 = new Button("Test2");
+//		Button testButton3 = new Button("Test3");
+//		this.combatView.getChildren().add(testButton);
+//		this.outputView.getChildren().add(testButton1);
+//		this.statsView.getChildren().add(testButton2);
+//		this.selectionView.getChildren().add(testButton3);
+//		this.combatView.getChildren().add(rectangle);
+//		this.outputView.getChildren().add(rectangle1);
+//		this.statsView.getChildren().add(rectangle2);
+//		this.selectionView.getChildren().add(rectangle3);
