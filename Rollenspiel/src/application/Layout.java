@@ -23,8 +23,6 @@ public class Layout {
 
 	public Scene createScene() {
 
-//		changeBackgrounds();
-
 		this.leftBox.getChildren().addAll(this.combatView.getView(), this.outputView.getView());
 		this.rightBox.getChildren().addAll(this.statsView.getView(), this.selectionView.getView());
 
@@ -36,44 +34,4 @@ public class Layout {
 		return scene;
 
 	}
-
-//	private void changeBackgrounds() {
-//
-//		this.combatView
-//				.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
-//		this.outputView.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-//		this.statsView.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
-//		this.selectionView
-//				.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-//
-//		this.combatView.setBorder(new Border(
-//				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-//		this.outputView.setBorder(new Border(
-//				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-//		this.statsView.setBorder(new Border(
-//				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-//		this.selectionView.setBorder(new Border(
-//				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-//	}
-
 }
-//		Rectangle rectangle = new Rectangle(700, 700);
-//		Rectangle rectangle1 = new Rectangle(700, 300);
-//		Rectangle rectangle2 = new Rectangle(300, 700);
-//		Rectangle rectangle3 = new Rectangle(300, 300);
-//		rectangle.setFill(Color.ORANGE);
-//		rectangle1.setFill(Color.RED);
-//		rectangle2.setFill(Color.BLUE);
-//		rectangle3.setFill(Color.GREEN);
-//		Button testButton = new Button("Test");
-//		Button testButton1 = new Button("Test1");
-//		Button testButton2 = new Button("Test2");
-//		Button testButton3 = new Button("Test3");
-//		this.combatView.getChildren().add(testButton);
-//		this.outputView.getChildren().add(testButton1);
-//		this.statsView.getChildren().add(testButton2);
-//		this.selectionView.getChildren().add(testButton3);
-//		this.combatView.getChildren().add(rectangle);
-//		this.outputView.getChildren().add(rectangle1);
-//		this.statsView.getChildren().add(rectangle2);
-//		this.selectionView.getChildren().add(rectangle3);

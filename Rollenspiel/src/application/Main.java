@@ -9,9 +9,9 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Layout combatView = new Layout();
+			Layout layout = new Layout();
 
-			Scene scene = combatView.createScene();
+			Scene scene = layout.createScene();
 
 			primaryStage.setScene(scene);
 			primaryStage.show();

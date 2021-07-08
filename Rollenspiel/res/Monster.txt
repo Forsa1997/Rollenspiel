@@ -1,0 +1,4 @@
+Rudi Rüsselschwein, 500, 45, 30,
+Rainer Zufall, 123, 150, 5,
+Zorro Zielwasser, 450, 40, 90,
+Drachi, 120, 30, 60,
