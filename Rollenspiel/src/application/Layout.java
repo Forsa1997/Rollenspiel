@@ -38,12 +38,12 @@ public class Layout {
 
 	public Monster randomEncounter() {
 
-		int randomNum = (int) (Math.random() * 6);
-		Monster drache = new Monster("Drache", 500, 35, 34, "/drache.jpg");
-		Monster ente = new Monster("Ente", 400, 55, 99, "/ente.jpg");
-		Monster affe = new Monster("Affe", 400, 55, 99, "/affe.jpg");
-		Monster ratte = new Monster("Ratte", 400, 55, 99, "/ratte.jpg");
-		Monster wolf = new Monster("Wolf", 400, 55, 99, "/wolf.jpg");
+		int randomNum = (int) (Math.random() * 5);
+		Monster drache = new Monster("Drache", 500, 35, 34, "/dragon.png");
+		Monster ente = new Monster("Ente", 400, 55, 99, "/duck.png");
+		Monster affe = new Monster("Affe", 400, 55, 99, "/monkey.png");
+		Monster ratte = new Monster("Ratte", 400, 55, 99, "/rat.png");
+		Monster wolf = new Monster("Wolf", 400, 55, 99, "/wolf.png");
 
 		Monster[] monster = { drache, ente, affe, ratte, wolf };
 
