@@ -16,6 +16,10 @@ public class CombatView extends VBox {
 	VBox vBox = new VBox();
 
 	public CombatView() {
+		setVBoxAttributes();
+	}
+
+	private void setVBoxAttributes() {
 		this.vBox.setMinSize(600, 700);
 		this.vBox.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
 		this.vBox.setBorder(new Border(

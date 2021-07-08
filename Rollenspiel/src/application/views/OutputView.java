@@ -16,6 +16,10 @@ public class OutputView extends VBox {
 	VBox vBox = new VBox();
 
 	public OutputView() {
+		setVBoxAttributes();
+	}
+
+	private void setVBoxAttributes() {
 		this.vBox.setMinSize(600, 300);
 		this.vBox.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
 		this.vBox.setBorder(new Border(

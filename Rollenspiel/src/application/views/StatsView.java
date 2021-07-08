@@ -2,6 +2,7 @@ package application.views;
 
 import application.figures.Figure;
 import application.figures.Monster;
+import application.figures.Player;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -21,22 +22,24 @@ import javafx.scene.paint.Color;
 public class StatsView extends VBox {
 
 	VBox vBox = new VBox();
-	TableView<Figure> attributeTable = new TableView<>();
+	TableView<Figure> attributeMonsterTable = new TableView<>();
+	TableView<Figure> attributePlayerTable = new TableView<>();
 
 	public StatsView() {
+		setVBoxAttributes();
+		createMonsterTable();
+		createPlayerTable();
+		this.vBox.getChildren().addAll(this.attributeMonsterTable, this.attributePlayerTable);
+	}
+
+	private void setVBoxAttributes() {
 		this.vBox.setMinSize(400, 700);
 		this.vBox.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 		this.vBox.setBorder(new Border(
 				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-		createTable();
-		this.vBox.getChildren().add(this.attributeTable);
 	}
 
-	public VBox getView() {
-		return this.vBox;
-	}
-
-	private TableView<Figure> createTable() {
+	private TableView<Figure> createMonsterTable() {
 
 		ObservableList<Figure> monsterList = FXCollections.observableArrayList();
 		monsterList.add(new Monster("Drache", 500, 35, 34, "/drache.jpg"));
@@ -55,10 +58,35 @@ public class StatsView extends VBox {
 		attackCol.setMinWidth(99);
 		hitProbCol.setMinWidth(99);
 
-		this.attributeTable.setItems(monsterList);
+		this.attributeMonsterTable.setItems(monsterList);
 
-		this.attributeTable.getColumns().addAll(nameCol, hpCol, attackCol, hitProbCol);
-		return this.attributeTable;
+		this.attributeMonsterTable.getColumns().addAll(nameCol, hpCol, attackCol, hitProbCol);
+		return this.attributeMonsterTable;
+	}
+
+	private TableView<Figure> createPlayerTable() {
+
+		ObservableList<Figure> playerList = FXCollections.observableArrayList();
+		playerList.add(new Player(500, 35, 34));
+
+		TableColumn<Figure, String> hpCol = new TableColumn<>("Lebenspunkte");
+		TableColumn<Figure, String> attackCol = new TableColumn<>("Angriffskraft");
+		TableColumn<Figure, String> hitProbCol = new TableColumn<>("Trefferchance");
+		hpCol.setCellValueFactory(new PropertyValueFactory<>("healthPoints"));
+		attackCol.setCellValueFactory(new PropertyValueFactory<>("attack"));
+		hitProbCol.setCellValueFactory(new PropertyValueFactory<>("hitProbability"));
+		hpCol.setMinWidth(99);
+		attackCol.setMinWidth(99);
+		hitProbCol.setMinWidth(99);
+
+		this.attributePlayerTable.setItems(playerList);
+
+		this.attributePlayerTable.getColumns().addAll(hpCol, attackCol, hitProbCol);
+		return this.attributePlayerTable;
+	}
+
+	public VBox getView() {
+		return this.vBox;
 	}
 
 }
