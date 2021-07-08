@@ -1,7 +1,11 @@
 package application.views;
 
+import java.io.InputStream;
+
 import application.figures.Monster;
 import javafx.geometry.Insets;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Border;
@@ -17,14 +21,16 @@ public class CombatView extends VBox {
 	VBox vBox = new VBox();
 
 	public CombatView(Monster monster) {
-
-//		InputStream input = getClass().getResourceAsStream(monster.getPath);
-//		Image monsterImage = new Image(input);
-//		ImageView monsterView = new ImageView(monsterImage);
+		System.out.println(monster.getImgPath());
+		InputStream input = getClass().getResourceAsStream(monster.getImgPath());
+		Image monsterImage = new Image(input);
+		ImageView monsterView = new ImageView(monsterImage);
+		vBox.getChildren().add(monsterView);
 		this.vBox.setMinSize(600, 700);
 		this.vBox.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
 		this.vBox.setBorder(new Border(
 				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+		
 	}
 
 	public VBox getView() {
