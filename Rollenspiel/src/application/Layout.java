@@ -4,18 +4,9 @@ import application.views.CombatView;
 import application.views.OutputView;
 import application.views.SelectionView;
 import application.views.StatsView;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.BorderStrokeStyle;
-import javafx.scene.layout.BorderWidths;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 
 public class Layout {
 
@@ -32,10 +23,10 @@ public class Layout {
 
 	public Scene createScene() {
 
-		changeBackgrounds();
+//		changeBackgrounds();
 
-		this.leftBox.getChildren().addAll(this.combatView, this.outputView);
-		this.rightBox.getChildren().addAll(this.statsView, this.selectionView);
+		this.leftBox.getChildren().addAll(this.combatView.getView(), this.outputView.getView());
+		this.rightBox.getChildren().addAll(this.statsView.getView(), this.selectionView.getView());
 
 		HBox root = new HBox();
 		root.getChildren().addAll(this.leftBox, this.rightBox);
@@ -46,24 +37,24 @@ public class Layout {
 
 	}
 
-	private void changeBackgrounds() {
-
-		this.combatView
-				.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
-		this.outputView.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-		this.statsView.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
-		this.selectionView
-				.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-
-		this.combatView.setBorder(new Border(
-				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-		this.outputView.setBorder(new Border(
-				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-		this.statsView.setBorder(new Border(
-				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-		this.selectionView.setBorder(new Border(
-				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-	}
+//	private void changeBackgrounds() {
+//
+//		this.combatView
+//				.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
+//		this.outputView.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+//		this.statsView.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+//		this.selectionView
+//				.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+//
+//		this.combatView.setBorder(new Border(
+//				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+//		this.outputView.setBorder(new Border(
+//				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+//		this.statsView.setBorder(new Border(
+//				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+//		this.selectionView.setBorder(new Border(
+//				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+//	}
 
 }
 //		Rectangle rectangle = new Rectangle(700, 700);
