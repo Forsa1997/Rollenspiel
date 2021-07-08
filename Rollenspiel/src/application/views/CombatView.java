@@ -1,5 +1,6 @@
 package application.views;
 
+import application.figures.Monster;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -15,7 +16,11 @@ public class CombatView extends VBox {
 
 	VBox vBox = new VBox();
 
-	public CombatView() {
+	public CombatView(Monster monster) {
+
+//		InputStream input = getClass().getResourceAsStream(monster.getPath);
+//		Image monsterImage = new Image(input);
+//		ImageView monsterView = new ImageView(monsterImage);
 		this.vBox.setMinSize(600, 700);
 		this.vBox.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
 		this.vBox.setBorder(new Border(
