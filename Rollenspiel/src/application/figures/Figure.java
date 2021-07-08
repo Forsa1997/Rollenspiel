@@ -14,7 +14,7 @@ public abstract class Figure {
 	}
 
 	public int getHealthPoints() {
-		return healthPoints;
+		return this.healthPoints;
 	}
 
 	public void setHealthPoints(int healthPoints) {
@@ -22,7 +22,7 @@ public abstract class Figure {
 	}
 
 	public int getAttack() {
-		return attack;
+		return this.attack;
 	}
 
 	public void setAttack(int attack) {
@@ -30,7 +30,7 @@ public abstract class Figure {
 	}
 
 	public int getHitProbability() {
-		return hitProbability;
+		return this.hitProbability;
 	}
 
 	public void setHitProbability(int hitProbability) {
