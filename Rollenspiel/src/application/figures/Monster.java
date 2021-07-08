@@ -1,4 +1,4 @@
-package Figure;
+package application.figures;
 
 public class Monster extends Figure {
 

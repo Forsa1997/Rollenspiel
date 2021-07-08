@@ -1,4 +1,4 @@
-package Figure;
+package application.figures;
 
 public abstract class Figure {
 
