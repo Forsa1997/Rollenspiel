@@ -1,6 +1,9 @@
 package application.views;
 
 import application.figures.Figure;
+import application.figures.Monster;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -35,6 +38,10 @@ public class StatsView extends VBox {
 
 	private TableView<Figure> createTable() {
 
+		ObservableList<Figure> monsterList = FXCollections.observableArrayList();
+		monsterList.add(new Monster("Drache", 500, 35, 34, "/drache.jpg"));
+		monsterList.add(new Monster("Kobold", 400, 30, 90, "/kobold.jpg"));
+
 		TableColumn<Figure, String> nameCol = new TableColumn<>("Name");
 		TableColumn<Figure, String> hpCol = new TableColumn<>("Lebenspunkte");
 		TableColumn<Figure, String> attackCol = new TableColumn<>("Angriffskraft");
@@ -42,11 +49,13 @@ public class StatsView extends VBox {
 		nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 		hpCol.setCellValueFactory(new PropertyValueFactory<>("healthPoints"));
 		attackCol.setCellValueFactory(new PropertyValueFactory<>("attack"));
-		hitProbCol.setCellValueFactory(new PropertyValueFactory<>("hitProbalility"));
+		hitProbCol.setCellValueFactory(new PropertyValueFactory<>("hitProbability"));
 		nameCol.setMinWidth(99);
 		hpCol.setMinWidth(99);
 		attackCol.setMinWidth(99);
 		hitProbCol.setMinWidth(99);
+
+		this.attributeTable.setItems(monsterList);
 
 		this.attributeTable.getColumns().addAll(nameCol, hpCol, attackCol, hitProbCol);
 		return this.attributeTable;
