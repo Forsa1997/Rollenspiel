@@ -4,10 +4,14 @@ import application.figures.Monster;
 import application.views.CombatView;
 import application.views.OutputView;
 import application.views.SelectionView;
+import application.views.SplashView;
 import application.views.StatsView;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class Layout {
 
@@ -17,12 +21,31 @@ public class Layout {
 	OutputView outputView = new OutputView();
 	StatsView statsView = new StatsView();
 	SelectionView selectionView = new SelectionView();
+	SplashView splashView = new SplashView();
 
 	public Layout() {
 
 	}
 
-	public Scene createScene() {
+	public void splashScene(Stage primaryStage) {
+		HBox root = new HBox();
+
+		Button enterButton = new Button();
+		enterButton.setOnKeyPressed(event -> {
+			if (event.getCode().equals(KeyCode.ENTER)) {
+				System.out.println("Test erfolgreich!");
+				createScene(primaryStage);
+			}
+		});
+
+		root.getChildren().addAll(splashView.getView(), enterButton);
+		Scene scene = new Scene(root, 1000, 1000);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+
+	}
+
+	public void createScene(Stage primaryStage) {
 
 		this.leftBox.getChildren().addAll(this.combatView.getView(), this.outputView.getView());
 		this.rightBox.getChildren().addAll(this.statsView.getView(), this.selectionView.getView());
@@ -32,7 +55,8 @@ public class Layout {
 		Scene scene = new Scene(root, 1000, 1000);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
-		return scene;
+		primaryStage.setScene(scene);
+		primaryStage.show();
 
 	}
 
