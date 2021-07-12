@@ -1,17 +1,12 @@
 package application;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-
 import application.figures.Monster;
 import application.views.CombatView;
 import application.views.OutputView;
 import application.views.SelectionView;
+import application.views.SplashView;
 import application.views.StatsView;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -23,20 +18,15 @@ public class Layout {
 	OutputView outputView = new OutputView();
 	StatsView statsView = new StatsView();
 	SelectionView selectionView = new SelectionView();
+	SplashView splashView = new SplashView();
 
 	public Layout() {
 
 	}
 
-	public Scene splashScene() throws FileNotFoundException {
-		InputStream input = getClass().getResourceAsStream("/splash.png");
-		Image splashImg = new Image(input);
-		ImageView imageView = new ImageView(splashImg);
-		imageView.setFitHeight(1000);
-		imageView.setFitWidth(1000);
-
-		imageView.setPreserveRatio(true);
-		Group root = new Group(imageView);
+	public Scene splashScene() {
+		HBox root = new HBox();
+		root.getChildren().add(splashView.getView());
 		Scene scene = new Scene(root, 1000, 1000);
 
 		return scene;

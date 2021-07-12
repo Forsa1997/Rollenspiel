@@ -9,11 +9,10 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-
 			Layout layout = new Layout();
-
 			Scene scene = layout.splashScene();
 			primaryStage.setScene(scene);
+
 			primaryStage.show();
 
 //			Scene layer = layout.createScene();
