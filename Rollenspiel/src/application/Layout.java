@@ -15,13 +15,13 @@ import javafx.stage.Stage;
 
 public class Layout {
 
-	VBox leftBox = new VBox();
-	VBox rightBox = new VBox();
-	CombatView combatView = new CombatView(randomEncounter());
-	OutputView outputView = new OutputView();
-	StatsView statsView = new StatsView();
-	SelectionView selectionView = new SelectionView();
-	SplashView splashView = new SplashView();
+	private VBox leftBox = new VBox();
+	private VBox rightBox = new VBox();
+	private CombatView combatView = new CombatView(randomEncounter());
+	private OutputView outputView = new OutputView();
+	private StatsView statsView = new StatsView();
+	private SelectionView selectionView = new SelectionView();
+	private SplashView splashView = new SplashView();
 
 	public Layout() {
 
@@ -53,8 +53,6 @@ public class Layout {
 		HBox root = new HBox();
 		root.getChildren().addAll(this.leftBox, this.rightBox);
 		Scene scene = new Scene(root, 1000, 1000);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-
 		primaryStage.setScene(scene);
 		primaryStage.show();
 

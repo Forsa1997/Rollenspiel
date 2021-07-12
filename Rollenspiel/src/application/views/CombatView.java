@@ -23,7 +23,7 @@ public class CombatView extends VBox {
 	public CombatView(Monster monster) {
 
 		InputStream input = getClass().getResourceAsStream(monster.getImgPath());
-		System.out.println(monster.getImgPath());
+//		System.out.println(monster.getImgPath());
 		Image monsterImage = new Image(input);
 		ImageView monsterView = new ImageView(monsterImage);
 		vBox.getChildren().add(monsterView);
