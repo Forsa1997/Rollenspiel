@@ -23,6 +23,8 @@ public class StatsView extends VBox {
 
 	private TableView<Figure> attributeMonsterTable = new TableView<>();
 	private TableView<Figure> attributePlayerTable = new TableView<>();
+	private String textAligement = "-fx-alignment: CENTER;";
+	private String fontSize = "-fx-font-size:25";
 
 	public StatsView(Monster monster) {
 		setVBoxAttributes();
@@ -46,17 +48,25 @@ public class StatsView extends VBox {
 		monsterList.add(monster);
 
 		TableColumn<Figure, String> nameCol = new TableColumn<>("Name");
-		TableColumn<Figure, String> hpCol = new TableColumn<>("Lebenspunkte");
-		TableColumn<Figure, String> attackCol = new TableColumn<>("Angriffskraft");
-		TableColumn<Figure, String> hitProbCol = new TableColumn<>("Trefferchance");
+		TableColumn<Figure, String> hpCol = new TableColumn<>("LP");
+		TableColumn<Figure, String> attackCol = new TableColumn<>("AK");
+		TableColumn<Figure, String> hitProbCol = new TableColumn<>("TC");
 		nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 		hpCol.setCellValueFactory(new PropertyValueFactory<>("healthPoints"));
 		attackCol.setCellValueFactory(new PropertyValueFactory<>("attack"));
 		hitProbCol.setCellValueFactory(new PropertyValueFactory<>("hitProbability"));
-		nameCol.setMinWidth(99);
-		hpCol.setMinWidth(99);
-		attackCol.setMinWidth(99);
-		hitProbCol.setMinWidth(99);
+		nameCol.setStyle(this.textAligement);
+		nameCol.setStyle(this.fontSize);
+		hpCol.setStyle(this.textAligement);
+		hpCol.setStyle(this.fontSize);
+		attackCol.setStyle(this.textAligement);
+		attackCol.setStyle(this.fontSize);
+		hitProbCol.setStyle(this.textAligement);
+		hitProbCol.setStyle(this.fontSize);
+		nameCol.setMinWidth(80);
+		hpCol.setMinWidth(15);
+		attackCol.setMinWidth(15);
+		hitProbCol.setMinWidth(15);
 
 		this.attributeMonsterTable.setItems(monsterList);
 
@@ -70,17 +80,25 @@ public class StatsView extends VBox {
 		playerList.add(new Player("Player", 500, 35, 34));
 
 		TableColumn<Figure, String> nameCol = new TableColumn<>("Name");
-		TableColumn<Figure, String> hpCol = new TableColumn<>("Lebenspunkte");
-		TableColumn<Figure, String> attackCol = new TableColumn<>("Angriffskraft");
-		TableColumn<Figure, String> hitProbCol = new TableColumn<>("Trefferchance");
+		TableColumn<Figure, String> hpCol = new TableColumn<>("LP");
+		TableColumn<Figure, String> attackCol = new TableColumn<>("AK");
+		TableColumn<Figure, String> hitProbCol = new TableColumn<>("TC");
 		nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 		hpCol.setCellValueFactory(new PropertyValueFactory<>("healthPoints"));
 		attackCol.setCellValueFactory(new PropertyValueFactory<>("attack"));
 		hitProbCol.setCellValueFactory(new PropertyValueFactory<>("hitProbability"));
-		nameCol.setMinWidth(99);
-		hpCol.setMinWidth(99);
-		attackCol.setMinWidth(99);
-		hitProbCol.setMinWidth(99);
+		nameCol.setStyle(this.textAligement);
+		nameCol.setStyle(this.fontSize);
+		hpCol.setStyle(this.textAligement);
+		hpCol.setStyle(this.fontSize);
+		attackCol.setStyle(this.textAligement);
+		attackCol.setStyle(this.fontSize);
+		hitProbCol.setStyle(this.textAligement);
+		hitProbCol.setStyle(this.fontSize);
+		nameCol.setMinWidth(80);
+		hpCol.setMinWidth(15);
+		attackCol.setMinWidth(15);
+		hitProbCol.setMinWidth(15);
 
 		this.attributePlayerTable.setItems(playerList);
 
