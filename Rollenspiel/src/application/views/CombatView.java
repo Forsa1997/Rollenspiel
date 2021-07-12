@@ -18,15 +18,13 @@ import javafx.scene.paint.Color;
 
 public class CombatView extends VBox {
 
-	VBox vBox = new VBox();
-
 	public CombatView(Monster monster) {
 
 		InputStream input = getClass().getResourceAsStream(monster.getImgPath());
 		System.out.println(monster.getImgPath());
 		Image monsterImage = new Image(input);
 		ImageView monsterView = new ImageView(monsterImage);
-		vBox.getChildren().add(monsterView);
+		this.getChildren().add(monsterView);
 	}
 
 	public CombatView() {
@@ -34,15 +32,11 @@ public class CombatView extends VBox {
 	}
 
 	private void setVBoxAttributes() {
-		this.vBox.setMinSize(600, 700);
-		this.vBox.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
-		this.vBox.setBorder(new Border(
+		this.setMinSize(600, 700);
+		this.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
+		this.setBorder(new Border(
 				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
-	}
-
-	public VBox getView() {
-		return this.vBox;
 	}
 
 }

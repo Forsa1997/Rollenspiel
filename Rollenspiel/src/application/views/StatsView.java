@@ -21,21 +21,20 @@ import javafx.scene.paint.Color;
 
 public class StatsView extends VBox {
 
-	VBox vBox = new VBox();
-	TableView<Figure> attributeMonsterTable = new TableView<>();
-	TableView<Figure> attributePlayerTable = new TableView<>();
+	private TableView<Figure> attributeMonsterTable = new TableView<>();
+	private TableView<Figure> attributePlayerTable = new TableView<>();
 
 	public StatsView(Monster monster) {
 		setVBoxAttributes();
 		createMonsterTable(monster);
 		createPlayerTable();
-		this.vBox.getChildren().addAll(this.attributeMonsterTable, this.attributePlayerTable);
+		this.getChildren().addAll(this.attributeMonsterTable, this.attributePlayerTable);
 	}
 
 	private void setVBoxAttributes() {
-		this.vBox.setMinSize(400, 700);
-		this.vBox.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
-		this.vBox.setBorder(new Border(
+		this.setMinSize(400, 700);
+		this.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+		this.setBorder(new Border(
 				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 	}
 
@@ -85,9 +84,4 @@ public class StatsView extends VBox {
 		this.attributePlayerTable.getColumns().addAll(hpCol, attackCol, hitProbCol);
 		return this.attributePlayerTable;
 	}
-
-	public VBox getView() {
-		return this.vBox;
-	}
-
 }
