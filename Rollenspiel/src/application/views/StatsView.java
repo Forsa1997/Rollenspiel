@@ -25,9 +25,9 @@ public class StatsView extends VBox {
 	TableView<Figure> attributeMonsterTable = new TableView<>();
 	TableView<Figure> attributePlayerTable = new TableView<>();
 
-	public StatsView() {
+	public StatsView(Monster monster) {
 		setVBoxAttributes();
-		createMonsterTable();
+		createMonsterTable(monster);
 		createPlayerTable();
 		this.vBox.getChildren().addAll(this.attributeMonsterTable, this.attributePlayerTable);
 	}
@@ -39,11 +39,12 @@ public class StatsView extends VBox {
 				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 	}
 
-	private TableView<Figure> createMonsterTable() {
+	private TableView<Figure> createMonsterTable(Monster monster) {
 
 		ObservableList<Figure> monsterList = FXCollections.observableArrayList();
-		monsterList.add(new Monster("Drache", 500, 35, 34, "/drache.jpg"));
-		monsterList.add(new Monster("Kobold", 400, 30, 90, "/kobold.jpg"));
+//		monsterList.add(new Monster("Drache", 500, 35, 34, "/drache.jpg"));
+//		monsterList.add(new Monster("Kobold", 400, 30, 90, "/kobold.jpg"));
+		monsterList.add(monster);
 
 		TableColumn<Figure, String> nameCol = new TableColumn<>("Name");
 		TableColumn<Figure, String> hpCol = new TableColumn<>("Lebenspunkte");

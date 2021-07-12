@@ -30,7 +30,6 @@ public class SelectionView extends VBox {
 		Button combat = createButton("Kämpfen");
 		Button flee = createButton("Flüchten");
 		Button defense = createButton("Verteidigen");
-//		this.gridPane.getChildren().addAll(items, combat, flee, defense);
 		this.gridPane.setHgap(3);
 		this.gridPane.setVgap(3);
 		this.gridPane.add(items, 0, 0);
@@ -44,6 +43,7 @@ public class SelectionView extends VBox {
 	private Button createButton(String name) {
 		Button button = new Button(name);
 		button.setMinSize(194, 100);
+		button.setStyle("-fx-font-size:30");
 		return button;
 	}
 
