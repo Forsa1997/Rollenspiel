@@ -1,4 +1,4 @@
-package fight;
+package application.fight;
 
 import java.util.Random;
 

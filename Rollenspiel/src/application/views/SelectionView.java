@@ -1,6 +1,6 @@
 package application.views;
 
-import items.Potion;
+import application.items.Potion;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
