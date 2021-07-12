@@ -45,11 +45,11 @@ public class Fight {
 
 	public void selectedItem(Potion potion, Player player) {
 
-		if (potion.equals(Potion.HEALTH_POTION)) {
+		if (potion.equals(Potion.SMALL_HEALTH_POTION)) {
 			selectPotion(player, 50);
-		} else if (potion.equals(Potion.SUPER_POTION)) {
+		} else if (potion.equals(Potion.MEDIUM_HEALTH_POTION)) {
 			selectPotion(player, 75);
-		} else if (potion.equals(Potion.MEGA_POTION))
+		} else if (potion.equals(Potion.LARGE_HEALTH_POTION))
 			selectPotion(player, 100);
 	}
 
