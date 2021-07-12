@@ -11,10 +11,6 @@ public class Main extends Application {
 			Layout layout = new Layout();
 			layout.splashScene(primaryStage);
 
-//			Scene layer = layout.createScene();
-//			primaryStage.setScene(layer);
-//			primaryStage.show();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
