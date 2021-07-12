@@ -1,14 +1,21 @@
 package items;
 
+import application.figures.Figure;
+
 public enum Potion {
 //
-//	HEALTH_POTION("Heiltrank", p -> p.getCurrentHealthPoints());
+	SMALL_HEALTH_POTION("Kleiner Heiltrank", 25), MEDIUM_HEALTH_POTION("Heiltrank", 50),
+	LARGE_HEALTH_POTION("Grosser Heiltrank", 75), POISON_POTION("Gifttrank", -25);
+
+//			, p -> p.getCurrentHealthPoints());
 //
-//	private String name;
-//
-//	Potion(String name, Function object) {
-//		this.name = name;
-//	}
+	private String name;
+	private int modifier;
+
+	Potion(String name, int modifier) {
+		this.name = name;
+		this.modifier = modifier;
+	}
 //
 //	private Function<Player, Integer> propertyFunction;
 //
@@ -19,5 +26,13 @@ public enum Potion {
 //	public Function<Player, Integer> getPropertyFunction() {
 //		return this.propertyFunction;
 //	}
+
+	public void usePotion(Figure figure) {
+
+	}
+
+	public String getName() {
+		return name;
+	}
 
 }
