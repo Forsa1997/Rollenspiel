@@ -9,6 +9,7 @@ import application.views.StatsView;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class Layout {
 
@@ -24,12 +25,13 @@ public class Layout {
 
 	}
 
-	public Scene splashScene() {
+	public void splashScene(Stage primaryStage) {
 		HBox root = new HBox();
 		root.getChildren().add(splashView.getView());
 		Scene scene = new Scene(root, 1000, 1000);
+		primaryStage.setScene(scene);
+		primaryStage.show();
 
-		return scene;
 	}
 
 	public Scene createScene() {
