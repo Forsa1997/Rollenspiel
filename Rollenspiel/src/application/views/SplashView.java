@@ -8,8 +8,6 @@ import javafx.scene.layout.VBox;
 
 public class SplashView extends VBox {
 
-	VBox vBox = new VBox();
-
 	public SplashView() {
 		InputStream input = getClass().getResourceAsStream("/splash.png");
 		Image splashImg = new Image(input);
@@ -17,12 +15,9 @@ public class SplashView extends VBox {
 		imageView.setFitHeight(1000);
 		imageView.setFitWidth(1000);
 
-		vBox.getChildren().add(imageView);
-		vBox.setMinSize(1000, 1000);
+		this.getChildren().add(imageView);
+		this.setMinSize(1000, 1000);
 
 	}
 
-	public VBox getView() {
-		return this.vBox;
-	}
 }

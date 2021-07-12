@@ -67,21 +67,24 @@ public class StatsView extends VBox {
 	private TableView<Figure> createPlayerTable() {
 
 		ObservableList<Figure> playerList = FXCollections.observableArrayList();
-		playerList.add(new Player(500, 35, 34));
+		playerList.add(new Player("Player", 500, 35, 34));
 
+		TableColumn<Figure, String> nameCol = new TableColumn<>("Name");
 		TableColumn<Figure, String> hpCol = new TableColumn<>("Lebenspunkte");
 		TableColumn<Figure, String> attackCol = new TableColumn<>("Angriffskraft");
 		TableColumn<Figure, String> hitProbCol = new TableColumn<>("Trefferchance");
+		nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 		hpCol.setCellValueFactory(new PropertyValueFactory<>("healthPoints"));
 		attackCol.setCellValueFactory(new PropertyValueFactory<>("attack"));
 		hitProbCol.setCellValueFactory(new PropertyValueFactory<>("hitProbability"));
+		nameCol.setMinWidth(99);
 		hpCol.setMinWidth(99);
 		attackCol.setMinWidth(99);
 		hitProbCol.setMinWidth(99);
 
 		this.attributePlayerTable.setItems(playerList);
 
-		this.attributePlayerTable.getColumns().addAll(hpCol, attackCol, hitProbCol);
+		this.attributePlayerTable.getColumns().addAll(nameCol, hpCol, attackCol, hitProbCol);
 		return this.attributePlayerTable;
 	}
 }
