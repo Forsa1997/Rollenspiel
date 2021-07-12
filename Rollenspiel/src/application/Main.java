@@ -11,9 +11,6 @@ public class Main extends Application {
 			Layout layout = new Layout();
 			layout.splashScene(primaryStage);
 
-//			Scene scene = combatView.createScene();
-//
-//			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
