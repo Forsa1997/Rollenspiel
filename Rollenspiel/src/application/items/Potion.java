@@ -1,4 +1,4 @@
-package items;
+package application.items;
 
 import application.figures.Figure;
 
