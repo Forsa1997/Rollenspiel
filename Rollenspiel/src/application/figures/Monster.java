@@ -2,11 +2,21 @@ package application.figures;
 
 public class Monster extends Figure {
 
+	private String name;
 	private String imgPath;
 
 	public Monster(String name, int healthPoints, int attack, int hitProbability, String imgPath) {
-		super(name, healthPoints, attack, hitProbability);
+		super(healthPoints, attack, hitProbability);
+		this.name = name;
 		this.imgPath = imgPath;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getImgPath() {

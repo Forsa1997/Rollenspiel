@@ -39,7 +39,7 @@ public class Layout {
 			}
 		});
 
-		root.getChildren().addAll(this.splashView, enterButton);
+		root.getChildren().addAll(this.splashView.getView(), enterButton);
 		Scene scene = new Scene(root, 1000, 1000);
 		primaryStage.setScene(scene);
 		primaryStage.show();

@@ -11,7 +11,6 @@ public class Main extends Application {
 			Layout layout = new Layout();
 			layout.splashScene(primaryStage);
 
-			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

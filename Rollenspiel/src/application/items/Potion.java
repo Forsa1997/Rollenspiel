@@ -1,4 +1,4 @@
-package items;
+package application.items;
 
 import application.figures.Figure;
 
@@ -16,7 +16,12 @@ public enum Potion {
 	}
 
 	public void usePotion(Figure figure) {
-
+//		int currentHealthPoints = figure.getHealthPoints() / 100 * this.modifier;
+//		if (figure.getHealthPoints() < figure.getCurrentHealthPoints() + currentHealthPoints) {
+//			figure.setCurrentHealthPoints(figure.getHealthPoints());
+//		} else {
+//			figure.setCurrentHealthPoints(figure.getCurrentHealthPoints() + currentHealthPoints);
+//		}
 	}
 
 	public String getName() {
