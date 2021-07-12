@@ -15,13 +15,14 @@ import javafx.stage.Stage;
 
 public class Layout {
 
-	VBox leftBox = new VBox();
-	VBox rightBox = new VBox();
-	CombatView combatView = new CombatView(randomEncounter());
-	OutputView outputView = new OutputView();
-	StatsView statsView = new StatsView();
-	SelectionView selectionView = new SelectionView();
-	SplashView splashView = new SplashView();
+	private Monster startMonster = Monster.randomEncounter();
+	private VBox leftBox = new VBox();
+	private VBox rightBox = new VBox();
+	private CombatView combatView = new CombatView(this.startMonster);
+	private OutputView outputView = new OutputView();
+	private StatsView statsView = new StatsView(this.startMonster);
+	private SelectionView selectionView = new SelectionView();
+	private SplashView splashView = new SplashView();
 
 	public Layout() {
 
@@ -38,7 +39,7 @@ public class Layout {
 			}
 		});
 
-		root.getChildren().addAll(splashView.getView(), enterButton);
+		root.getChildren().addAll(this.splashView.getView(), enterButton);
 		Scene scene = new Scene(root, 1000, 1000);
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -57,21 +58,6 @@ public class Layout {
 
 		primaryStage.setScene(scene);
 		primaryStage.show();
-
-	}
-
-	public Monster randomEncounter() {
-
-		int randomNum = (int) (Math.random() * 5);
-		Monster drache = new Monster("Drache", 500, 35, 34, "/dragon.png");
-		Monster ente = new Monster("Ente", 400, 55, 99, "/duck.png");
-		Monster affe = new Monster("Affe", 400, 55, 99, "/monkey.png");
-		Monster ratte = new Monster("Ratte", 400, 55, 99, "/rat.png");
-		Monster wolf = new Monster("Wolf", 400, 55, 99, "/wolf.png");
-
-		Monster[] monster = { drache, ente, affe, ratte, wolf };
-
-		return monster[randomNum];
 
 	}
 }
