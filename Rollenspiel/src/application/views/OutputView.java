@@ -13,21 +13,15 @@ import javafx.scene.paint.Color;
 
 public class OutputView extends VBox {
 
-	VBox vBox = new VBox();
-
 	public OutputView() {
 		setVBoxAttributes();
 	}
 
 	private void setVBoxAttributes() {
-		this.vBox.setMinSize(600, 300);
-		this.vBox.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-		this.vBox.setBorder(new Border(
+		this.setMinSize(600, 300);
+		this.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+		this.setBorder(new Border(
 				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-	}
-
-	public VBox getView() {
-		return this.vBox;
 	}
 
 }

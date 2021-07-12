@@ -21,7 +21,7 @@ public class Fight {
 	public boolean playerStartsFight(Monster monster, Player player) {
 
 		int i = monster.getAttack() + player.getAttack();
-		int randomNumber = rand.nextInt(i);
+		int randomNumber = this.rand.nextInt(i);
 		randomNumber += 1;
 		if (player.getAttack() >= randomNumber) {
 			return true;
@@ -31,7 +31,7 @@ public class Fight {
 
 	public boolean escapeProbability() {
 		escapeCounter++;
-		int probability = rand.nextInt(50);
+		int probability = this.rand.nextInt(50);
 		probability += 0;
 		if (escapeCounter > 1) {
 			probability = probability + (15 * escapeCounter);

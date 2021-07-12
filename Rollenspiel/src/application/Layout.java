@@ -39,7 +39,7 @@ public class Layout {
 			}
 		});
 
-		root.getChildren().addAll(this.splashView.getView(), enterButton);
+		root.getChildren().addAll(this.splashView, enterButton);
 		Scene scene = new Scene(root, 1000, 1000);
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -48,8 +48,8 @@ public class Layout {
 
 	public void createScene(Stage primaryStage) {
 
-		this.leftBox.getChildren().addAll(this.combatView.getView(), this.outputView.getView());
-		this.rightBox.getChildren().addAll(this.statsView.getView(), this.selectionView.getView());
+		this.leftBox.getChildren().addAll(this.combatView, this.outputView);
+		this.rightBox.getChildren().addAll(this.statsView, this.selectionView);
 
 		HBox root = new HBox();
 		root.getChildren().addAll(this.leftBox, this.rightBox);

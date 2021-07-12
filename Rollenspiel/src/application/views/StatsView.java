@@ -21,21 +21,22 @@ import javafx.scene.paint.Color;
 
 public class StatsView extends VBox {
 
-	VBox vBox = new VBox();
-	TableView<Figure> attributeMonsterTable = new TableView<>();
-	TableView<Figure> attributePlayerTable = new TableView<>();
+	private TableView<Figure> attributeMonsterTable = new TableView<>();
+	private TableView<Figure> attributePlayerTable = new TableView<>();
+	private String textAligement = "-fx-alignment: CENTER;";
+	private String fontSize = "-fx-font-size:20";
 
 	public StatsView(Monster monster) {
 		setVBoxAttributes();
 		createMonsterTable(monster);
 		createPlayerTable();
-		this.vBox.getChildren().addAll(this.attributeMonsterTable, this.attributePlayerTable);
+		this.getChildren().addAll(this.attributeMonsterTable, this.attributePlayerTable);
 	}
 
 	private void setVBoxAttributes() {
-		this.vBox.setMinSize(400, 700);
-		this.vBox.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
-		this.vBox.setBorder(new Border(
+		this.setMinSize(400, 700);
+		this.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+		this.setBorder(new Border(
 				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 	}
 
@@ -47,47 +48,71 @@ public class StatsView extends VBox {
 		monsterList.add(monster);
 
 		TableColumn<Figure, String> nameCol = new TableColumn<>("Name");
-		TableColumn<Figure, String> hpCol = new TableColumn<>("Lebenspunkte");
-		TableColumn<Figure, String> attackCol = new TableColumn<>("Angriffskraft");
-		TableColumn<Figure, String> hitProbCol = new TableColumn<>("Trefferchance");
+		TableColumn<Figure, String> hpCol = new TableColumn<>("Max LP");
+		TableColumn<Figure, String> actualHpCol = new TableColumn<>("Current LP");
+		TableColumn<Figure, String> attackCol = new TableColumn<>("AK");
+		TableColumn<Figure, String> hitProbCol = new TableColumn<>("TC");
 		nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 		hpCol.setCellValueFactory(new PropertyValueFactory<>("healthPoints"));
+		actualHpCol.setCellValueFactory(new PropertyValueFactory<>("currentHealthPoints"));
 		attackCol.setCellValueFactory(new PropertyValueFactory<>("attack"));
 		hitProbCol.setCellValueFactory(new PropertyValueFactory<>("hitProbability"));
-		nameCol.setMinWidth(99);
-		hpCol.setMinWidth(99);
-		attackCol.setMinWidth(99);
-		hitProbCol.setMinWidth(99);
+		nameCol.setStyle(this.textAligement);
+		nameCol.setStyle(this.fontSize);
+		hpCol.setStyle(this.textAligement);
+		hpCol.setStyle(this.fontSize);
+		actualHpCol.setStyle(this.textAligement);
+		actualHpCol.setStyle(this.fontSize);
+		attackCol.setStyle(this.textAligement);
+		attackCol.setStyle(this.fontSize);
+		hitProbCol.setStyle(this.textAligement);
+		hitProbCol.setStyle(this.fontSize);
+		nameCol.setMinWidth(79);
+		hpCol.setMinWidth(79);
+		actualHpCol.setMinWidth(120);
+		attackCol.setMinWidth(40);
+		hitProbCol.setMinWidth(40);
 
 		this.attributeMonsterTable.setItems(monsterList);
 
-		this.attributeMonsterTable.getColumns().addAll(nameCol, hpCol, attackCol, hitProbCol);
+		this.attributeMonsterTable.getColumns().addAll(nameCol, hpCol, actualHpCol, attackCol, hitProbCol);
 		return this.attributeMonsterTable;
 	}
 
 	private TableView<Figure> createPlayerTable() {
 
 		ObservableList<Figure> playerList = FXCollections.observableArrayList();
-		playerList.add(new Player(500, 35, 34));
+		playerList.add(new Player("Player", 500, 35, 34));
 
-		TableColumn<Figure, String> hpCol = new TableColumn<>("Lebenspunkte");
-		TableColumn<Figure, String> attackCol = new TableColumn<>("Angriffskraft");
-		TableColumn<Figure, String> hitProbCol = new TableColumn<>("Trefferchance");
+		TableColumn<Figure, String> nameCol = new TableColumn<>("Name");
+		TableColumn<Figure, String> hpCol = new TableColumn<>("Max LP");
+		TableColumn<Figure, String> actualHpCol = new TableColumn<>("Current LP");
+		TableColumn<Figure, String> attackCol = new TableColumn<>("AK");
+		TableColumn<Figure, String> hitProbCol = new TableColumn<>("TC");
+		nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 		hpCol.setCellValueFactory(new PropertyValueFactory<>("healthPoints"));
+		actualHpCol.setCellValueFactory(new PropertyValueFactory<>("currentHealthPoints"));
 		attackCol.setCellValueFactory(new PropertyValueFactory<>("attack"));
 		hitProbCol.setCellValueFactory(new PropertyValueFactory<>("hitProbability"));
-		hpCol.setMinWidth(99);
-		attackCol.setMinWidth(99);
-		hitProbCol.setMinWidth(99);
+		nameCol.setStyle(this.textAligement);
+		nameCol.setStyle(this.fontSize);
+		hpCol.setStyle(this.textAligement);
+		hpCol.setStyle(this.fontSize);
+		actualHpCol.setStyle(this.textAligement);
+		actualHpCol.setStyle(this.fontSize);
+		attackCol.setStyle(this.textAligement);
+		attackCol.setStyle(this.fontSize);
+		hitProbCol.setStyle(this.textAligement);
+		hitProbCol.setStyle(this.fontSize);
+		nameCol.setMinWidth(79);
+		hpCol.setMinWidth(79);
+		actualHpCol.setMinWidth(120);
+		attackCol.setMinWidth(40);
+		hitProbCol.setMinWidth(40);
 
 		this.attributePlayerTable.setItems(playerList);
 
-		this.attributePlayerTable.getColumns().addAll(hpCol, attackCol, hitProbCol);
+		this.attributePlayerTable.getColumns().addAll(nameCol, hpCol, actualHpCol, attackCol, hitProbCol);
 		return this.attributePlayerTable;
 	}
-
-	public VBox getView() {
-		return this.vBox;
-	}
-
 }

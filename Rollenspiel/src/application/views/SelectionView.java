@@ -10,33 +10,30 @@ import javafx.scene.layout.BorderStrokeStyle;
 import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-public class SelectionView extends VBox {
-
-	GridPane gridPane = new GridPane();
+public class SelectionView extends GridPane {
 
 	public SelectionView() {
 		setVBoxAttributes();
 	}
 
 	private void setVBoxAttributes() {
-		this.gridPane.setMinSize(400, 700);
-		this.gridPane.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-		this.gridPane.setBorder(new Border(
+		this.setMinSize(400, 700);
+		this.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+		this.setBorder(new Border(
 				new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		Button items = createButton("Items");
 		Button combat = createButton("Kämpfen");
 		Button flee = createButton("Flüchten");
 		Button defense = createButton("Verteidigen");
-		this.gridPane.setHgap(3);
-		this.gridPane.setVgap(3);
-		this.gridPane.add(items, 0, 0);
-		this.gridPane.add(combat, 0, 1);
-		this.gridPane.add(flee, 1, 1);
-		this.gridPane.add(defense, 1, 0);
-		this.gridPane.setPadding(new Insets(3));
+		this.setHgap(3);
+		this.setVgap(3);
+		this.add(items, 0, 0);
+		this.add(combat, 0, 1);
+		this.add(flee, 1, 1);
+		this.add(defense, 1, 0);
+		this.setPadding(new Insets(3));
 
 	}
 
@@ -45,10 +42,6 @@ public class SelectionView extends VBox {
 		button.setMinSize(194, 100);
 		button.setStyle("-fx-font-size:30");
 		return button;
-	}
-
-	public GridPane getView() {
-		return this.gridPane;
 	}
 
 }
