@@ -1,13 +1,14 @@
 package items;
 
 public enum Potion {
-//
-//	HEALTH_POTION("Heiltrank", p -> p.getCurrentHealthPoints());
-//
+
+	HEALTH_POTION, SUPER_POTION, MEGA_POTION;
+
 //	private String name;
 //
 //	Potion(String name, Function object) {
 //		this.name = name;
+//		
 //	}
 //
 //	private Function<Player, Integer> propertyFunction;

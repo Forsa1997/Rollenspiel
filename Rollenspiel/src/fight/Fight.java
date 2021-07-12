@@ -1,11 +1,16 @@
 package fight;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import application.figures.Monster;
 import application.figures.Player;
+import items.Potion;
 
 public class Fight {
+
+	List<Integer> itemList = new ArrayList<>();
 
 	Random rand = new Random();
 	private boolean escape;
@@ -38,4 +43,22 @@ public class Fight {
 		}
 	}
 
+	public void selectedItem(Potion potion, Player player) {
+
+		if (potion.equals(Potion.HEALTH_POTION)) {
+			selectPotion(player, 50);
+		} else if (potion.equals(Potion.SUPER_POTION)) {
+			selectPotion(player, 75);
+		} else if (potion.equals(Potion.MEGA_POTION))
+			selectPotion(player, 100);
+	}
+
+	public void selectPotion(Player player, int value) {
+		int currentHealthPoints = player.getHealthPoints() / 100 * value;
+		if (player.getHealthPoints() < player.getCurrentHealthPoints() + currentHealthPoints) {
+			player.setCurrentHealthPoints(player.getHealthPoints());
+		} else {
+			player.setCurrentHealthPoints(player.getCurrentHealthPoints() + currentHealthPoints);
+		}
+	}
 }

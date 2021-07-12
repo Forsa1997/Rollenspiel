@@ -5,12 +5,21 @@ public abstract class Figure {
 	private int healthPoints;
 	private int attack;
 	private int hitProbability;
+	private int currentHealthPoints;
 
 	public Figure(int healthPoints, int attack, int hitProbability) {
 		super();
 		this.healthPoints = healthPoints;
 		this.attack = attack;
 		this.hitProbability = hitProbability;
+	}
+
+	public int getCurrentHealthPoints() {
+		return currentHealthPoints;
+	}
+
+	public void setCurrentHealthPoints(int currentHealthPoints) {
+		this.currentHealthPoints = currentHealthPoints;
 	}
 
 	public int getHealthPoints() {
