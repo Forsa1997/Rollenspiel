@@ -9,12 +9,17 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+
 			Layout layout = new Layout();
 
-			Scene scene = layout.createScene();
-
+			Scene scene = layout.splashScene();
 			primaryStage.setScene(scene);
 			primaryStage.show();
+
+//			Scene layer = layout.createScene();
+//			primaryStage.setScene(layer);
+//			primaryStage.show();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
